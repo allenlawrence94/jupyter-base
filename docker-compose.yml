@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ercot:
+    restart: always
+    build:
+      context: .
+    image: jupyter:latest
+    container_name: jupyter
+    volumes:
+      - "${PWD}:/root/work"
+    working_dir: "/root/work"
+    ports:
+      - "8888:8888"
